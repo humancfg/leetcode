@@ -1,5 +1,7 @@
 package leetcode.easy;
 
+import java.io.BufferedInputStream;
+import java.io.OutputStream;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
@@ -11,6 +13,8 @@ public class twoSumSolution {
         int target = -8;
 
         System.out.println(Arrays.toString(twoSum(test, target)));
+
+
     }
 
     static int[] twoSum(int[] nums, int target) {
