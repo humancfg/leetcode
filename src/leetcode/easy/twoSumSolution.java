@@ -1,42 +1,34 @@
 package leetcode.easy;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class twoSumSolution {
+
     public static void main(String[] args) {
-        int[] test = {2, 13, 7, 1};
-        int target = 9;
+        int[] test = {-1, -2, -3, -4, -5};
+        int target = -8;
 
         System.out.println(Arrays.toString(twoSum(test, target)));
     }
 
     static int[] twoSum(int[] nums, int target) {
-        int[] answer = new int[2];
-        int temp;
-        int firstValue;
-        int secondValue;
 
-        for (int i = 0; i < nums.length - 1; i++) {
-            firstValue = nums[i];
-            secondValue = nums[i + 1];
-            temp = firstValue + secondValue;
+        Map<Integer, Integer> tempMap = new HashMap<>();
 
-            if (temp == target) {
-                answer = fillAnswerArray(firstValue, secondValue);
+        for (int i = 0; i < nums.length; i++) {
+            int requiredNumber = target - nums[i];
+
+            if (tempMap.containsKey(requiredNumber)) {
+                return new int[]{tempMap.get(requiredNumber), i};
             }
+
+            tempMap.put(nums[i], i);
         }
 
-        return answer;
-    }
-
-    static int[] fillAnswerArray(int... ints) {
-        int[] filledArray = new int[ints.length];
-
-        for (int j = 0; j < filledArray.length - 1; j++) {
-            filledArray[j] = j;
-            filledArray[j + 1] = j + 1;
-        }
-
-        return filledArray;
+        return null;
     }
 }
+
+
