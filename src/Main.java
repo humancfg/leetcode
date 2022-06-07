@@ -8,6 +8,10 @@ public class Main {
     static void getUnbelievableIndex(char[] charArray) throws MyException {
         try {
             System.out.println(charArray[100]);
+            System.out.println(charArray[100]);
+            System.out.println(charArray[100]);
+            System.out.println(charArray[100]);
+            System.out.println(charArray[100]);
         } catch (Exception ex) {
             throw new MyException();
         }
